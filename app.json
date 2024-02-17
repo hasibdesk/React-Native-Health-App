@@ -1,30 +1,49 @@
 {
-  "expo": {
-    "name": "NativeHealthApp",
-    "slug": "NativeHealthApp",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
-  }
+	"expo": {
+		"name": "NativeHealthApp",
+		"slug": "NativeHealthApp",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./assets/icon.png",
+		"userInterfaceStyle": "light",
+		"splash": {
+			"image": "./assets/splash.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#ffffff"
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "com.hasibul.NativeHealthApp"
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/adaptive-icon.png",
+				"backgroundColor": "#ffffff"
+			},
+			"package": "com.hasibul.NativeHealthApp",
+			"permissions": [
+				"android.permission.health.READ_STEPS",
+				"android.permission.health.READ_FLOORS_CLIMBED",
+				"android.permission.health.READ_DISTANCE"
+			]
+		},
+		"web": {
+			"favicon": "./assets/favicon.png"
+		},
+		"plugins": [
+			"react-native-health",
+			"./androidManifestPlugin.js",
+			[
+				"expo-build-properties",
+				{
+					"android": {
+						"compileSdkVersion": 34,
+						"targetSdkVersion": 34,
+						"minSdkVersion": 26
+					}
+				}
+			]
+		]
+	}
 }
